@@ -1,11 +1,19 @@
-import '../scss/App.scss'
+import { useEffect, useState } from "react";
+
+import Header from "./Header";
+// import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+import "../scss/App.scss";
 
 function App() {
   return (
     <div>
-      Escribe aquí tu código
+      <Header></Header>
+      <main>
+        <CharacterList></CharacterList>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
