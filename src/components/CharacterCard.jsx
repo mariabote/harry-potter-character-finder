@@ -1,4 +1,4 @@
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function CharacterCard({ image, name, species }) {
   const alternateImage =
@@ -12,9 +12,10 @@ function CharacterCard({ image, name, species }) {
   );
 }
 
-// QuoteItem.propTypes = {
-//     quote: PropTypes.string.isRequired,
-//     character: PropTypes.string.isRequired,
-// };
+CharacterCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+};
 
 export default CharacterCard;

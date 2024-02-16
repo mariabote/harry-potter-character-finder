@@ -1,29 +1,40 @@
-function Filters({handleFilterQuote, handleFilterCharacter}) {
-
-    const handleInputQuote = (event) => {
-      console.log(event.currentTarget.value);
-      handleFilterQuote(event.currentTarget.value);
-    };
-    const handleInputCharacter = (event) => {
-        console.log(event.currentTarget.value);
-        handleFilterCharacter(event.currentTarget.value);
-      };
-    return (
-    <form className='filters__container'>
-        <h2>Filtrar por frase</h2>
-        <input className="filter_quote_input" type="text" onInput={handleInputQuote}/>
-        <h2>Filtrar por personaje</h2>
-        <select className="filter_character_input" type="text" onInput={handleInputCharacter}>
-            <option value="">Todos</option>
-            <option value="ross">Ross</option>
-            <option value="monica">Monica</option>
-            <option value="joey">Joey</option>
-            <option value="phoebe">Phoebe</option>
-            <option value="chandler">Chandler</option>
-            <option value="rachel">Rachel</option>
-        </select>
+import PropTypes from "prop-types";
+function Filters({ handleFilterCharacter, handleFilterHouse }) {
+  const handleInputCharacter = (event) => {
+    console.log(event.currentTarget.value);
+    handleFilterCharacter(event.currentTarget.value);
+  };
+  const handleInputHouse = (event) => {
+    console.log(event.currentTarget.value);
+    handleFilterHouse(event.currentTarget.value);
+  };
+  return (
+    <form className="filters__container">
+      <h2>Search Character</h2>
+      <input
+        className="filter_character_input"
+        type="text"
+        onInput={handleInputCharacter}
+      />
+      <h2>Search House</h2>
+      <select
+        className="filter_house_input"
+        type="text"
+        onInput={handleInputHouse}
+      >
+        <option value="">All</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+      </select>
     </form>
-    );
-  }
-  
-  export default Filters;
+  );
+}
+
+Filters.propTypes = {
+  handleFilterCharacter: PropTypes.string.isRequired,
+  handleFilterHouse: PropTypes.string.isRequired,
+};
+
+export default Filters;
