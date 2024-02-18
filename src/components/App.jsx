@@ -21,6 +21,10 @@ function App() {
     setFilterCharacter(filterValue);
   };
 
+  const filteredCharacter = characters.filter((character) =>
+    character.name.toLowerCase().includes(filterCharacter.toLowerCase())
+  );
+
   // 2.useEffect
   // Cuando carga la página
   useEffect(() => {
@@ -41,7 +45,7 @@ function App() {
           handleFilterHouse={handleFilterHouse}
           handleFilterCharacter={handleFilterCharacter}
         ></Filters>
-        <CharacterList characters={characters}></CharacterList>
+        <CharacterList characters={filteredCharacter}></CharacterList>
       </main>
     </div>
   );
