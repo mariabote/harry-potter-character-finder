@@ -1,51 +1,31 @@
-import { useEffect, useState } from "react";
-
+import { useLocation, matchPath } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import Header from "./Header";
-import Filters from "./Filters";
-import CharacterList from "./CharacterList";
 import "../scss/App.scss";
-import callToApi from "../services/Api";
+import SearchPage from "./SearchPage";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
-  // 1.Variables de Estado
-  const [characters, setCharacters] = useState([]);
-
-  const [filterHouse, setFilterHouse] = useState("gryffindor");
-  const [filterCharacter, setFilterCharacter] = useState("");
-
-  const handleFilterHouse = (filterValue) => {
-    console.log(`handleFilterHouse ${filterValue}`);
-    setFilterHouse(filterValue);
-  };
-  const handleFilterCharacter = (filterValue) => {
-    setFilterCharacter(filterValue);
-  };
-
-  const filteredCharacter = characters.filter((character) =>
-    character.name.toLowerCase().includes(filterCharacter.toLowerCase())
-  );
-
-  // 2.useEffect
-  // Cuando carga la página
-  useEffect(() => {
-    callToApi(filterHouse).then((data) => {
-      setCharacters(data);
-    });
-  }, [filterHouse]);
-
-  // 3. funciones de eventos
-  // 4.variables para el html
-  // 5.el html en el return
-
+  // Con el hook useLocation primero obtengo la ruta actual
+  const { pathname } = useLocation();
+  // Con el matchPath compruebo si la ruta actual coincide con /product/:productId
+  const routeData = matchPath("detail/:characterId", pathname);
+  // Si no coincide, routeData es null
+  // Si sí coincide, routeData es un objeto con mucha información útil
+  // La información que me interesa está en routeData.params.productId
+  const characterId = routeData !== null ? routeData.params.characterId : "";
+  console.log(routeData);
   return (
     <div>
       <Header></Header>
       <main>
-        <Filters
-          handleFilterHouse={handleFilterHouse}
-          handleFilterCharacter={handleFilterCharacter}
-        ></Filters>
-        <CharacterList characters={filteredCharacter}></CharacterList>
+        <Routes>
+          <Route path="/" element={<SearchPage />} />
+          <Route
+            path="/detail/:characterId"
+            element={<CharacterDetail id={characterId} />}
+          />
+        </Routes>
       </main>
     </div>
   );

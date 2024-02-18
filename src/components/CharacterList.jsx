@@ -1,16 +1,15 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import CharacterCard from "./CharacterCard";
 
 function CharacterList({ characters }) {
   const htmlList = characters.map((character, idx) => (
-    <li key={idx} className="character__card">
-      <CharacterCard
-        image={character.image}
-        name={character.name}
-        species={character.species}
-      />
-    </li>
+    <Link key={idx} to={"/detail/" + character.id}>
+      <li className="character__card">
+        <CharacterCard characterData={character} />
+      </li>
+    </Link>
   ));
 
   return <ul className="character__list">{htmlList}</ul>;
