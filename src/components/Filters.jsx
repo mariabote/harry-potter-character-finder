@@ -1,23 +1,26 @@
 import PropTypes from "prop-types";
 function Filters({ handleFilterCharacter, handleFilterHouse }) {
   const handleInputCharacter = (event) => {
-    console.log(event.currentTarget.value);
+    event.preventDefault();
+    console.log(`handleInputCharacter ${event.currentTarget.value}`);
     handleFilterCharacter(event.currentTarget.value);
   };
   const handleInputHouse = (event) => {
-    console.log(event.currentTarget.value);
+    console.log(`handleInputHouse ${event.currentTarget.value}`);
     handleFilterHouse(event.currentTarget.value);
   };
   return (
     <form className="filters__container">
       <h2>Search Character</h2>
       <input
+        id="search__character"
         className="filter_character_input"
         type="text"
         onInput={handleInputCharacter}
       />
       <h2>Search House</h2>
       <select
+        id="search__house"
         className="filter_house_input"
         type="text"
         onInput={handleInputHouse}
@@ -33,8 +36,8 @@ function Filters({ handleFilterCharacter, handleFilterHouse }) {
 }
 
 Filters.propTypes = {
-  handleFilterCharacter: PropTypes.string.isRequired,
-  handleFilterHouse: PropTypes.string.isRequired,
+  handleFilterCharacter: PropTypes.func.isRequired,
+  handleFilterHouse: PropTypes.func.isRequired,
 };
 
 export default Filters;
