@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import getById from "../services/Getbyid";
@@ -14,18 +15,23 @@ function CharacterDetail({ id }) {
   });
 
   return (
-    <>
-      <img src={data.image || alternateImage}></img>
-      <h3 className="detail__name">{data.name}</h3>
-      <h3 className="detail__label">Estatus:</h3>
-      <h3 className="detail__value">{data.alive}</h3>
-      <h3 className="detail__label">Especie:</h3>
-      <h3 className="detail__value">{data.species}</h3>
-      <h3 className="detail__label">Género:</h3>
-      <h3 className="detail__value">{data.gender}</h3>
-      <h3 className="detail__label">Casa:</h3>
-      <h3 className="detail__value">{data.house}</h3>
-    </>
+    <section>
+      <div>
+        <img src={data.image || alternateImage}></img>
+        <h3 className="detail__name">{data.name}</h3>
+        <h3 className="detail__label">Estatus:</h3>
+        <h3 className="detail__value">{data.alive}</h3>
+        <h3 className="detail__label">Especie:</h3>
+        <h3 className="detail__value">{data.species}</h3>
+        <h3 className="detail__label">Género:</h3>
+        <h3 className="detail__value">{data.gender}</h3>
+        <h3 className="detail__label">Casa:</h3>
+        <h3 className="detail__value">{data.house}</h3>
+      </div>
+      <Link to=".." className="character__detail__btn">
+        Volver
+      </Link>
+    </section>
   );
 }
 
