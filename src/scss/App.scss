@@ -1,12 +1,24 @@
 @import 'core/reset';
 @import 'core/reset';
+html{
+   
+    background-color: grey;
 
+}
 .app {
     font-family: "Arial", sans-serif;
     text-align: center;
     margin: 20px;
   }
+header {
+    height: 150px;
+    display: flex;
+    justify-content: center;
 
+}
+.logo__hp{
+    height: 150px;
+}
 .filters{
     &__container{
         display: flex;
@@ -22,27 +34,39 @@
 }
 .character{
     &__card{
+        background-image: url("../src/images/bg-hp-card.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;      
         border: 1px solid black;
         border-radius: 5px;
         margin:1rem;
         padding: 1rem;
-        min-height: 7rem;
         display: flex;
         flex-direction: column;
     }
     &__list{
         display:grid;
-        grid-template-columns: 10% 10% 10%;
+        justify-content: center;
+        grid-template-columns: 20% 20% 20%;
         list-style: none;
     }
     &__name{
-        color:green;
-        text-align: right;
+        color:whitesmoke;
+        text-align: center;
         width:100%;
         margin-top: auto;
     }
     &__species{
-        font-style: italic;
+        color:whitesmoke;
+        text-align: center;
+
     }
+    &__image{
+        width: 100%;
+        aspect-ratio: 1;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+   
 
 }

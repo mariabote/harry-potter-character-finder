@@ -5,7 +5,12 @@ function CharacterCard({ characterData }) {
     "https://via.placeholder.com/210x295/666666/?text=HarryPotter";
   return (
     <>
-      <img src={characterData.image || alternateImage}></img>
+      <div
+        className="character__image"
+        style={{
+          backgroundImage: `url(${characterData.image || alternateImage})`,
+        }}
+      ></div>
       <h3 className="character__name">{characterData.name}</h3>
       <h3 className="character__species">{characterData.species}</h3>
     </>

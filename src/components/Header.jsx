@@ -1,11 +1,13 @@
 function Header() {
+  return (
+    <header>
+      <img
+        className="logo__hp"
+        src="../src/images/harry-potter-logo-32524.png"
+        alt="logo con el texto Harry Potter"
+      />
+    </header>
+  );
+}
 
-    return (
-      <header>
-        <h1>Harry Potter</h1>
-        {/* <img sr */}
-      </header>
-    );
-  }
-  
-  export default Header;
+export default Header;

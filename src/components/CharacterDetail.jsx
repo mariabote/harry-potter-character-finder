@@ -7,7 +7,6 @@ function CharacterDetail({ id }) {
   const [data, setData] = useState({});
   const alternateImage =
     "https://via.placeholder.com/210x295/666666/?text=HarryPotter";
-
   useEffect(() => {
     getById(id).then((data) => {
       setData(data[0]);
