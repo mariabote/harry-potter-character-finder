@@ -14,10 +14,12 @@ function CharacterDetail({ id }) {
   });
 
   return (
-    <section>
-      <div>
+    <section className="detail__container">
+      <div className="detail__head">
         <img src={data.image || alternateImage}></img>
         <h3 className="detail__name">{data.name}</h3>
+      </div>
+      <div className="detail__data">
         <h3 className="detail__label">Estatus:</h3>
         <h3 className="detail__value">
           {data.alive ? "Vivo ❤" : "Muertaco ☠"}
