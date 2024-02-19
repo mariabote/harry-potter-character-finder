@@ -19,13 +19,15 @@ function CharacterDetail({ id }) {
         <img src={data.image || alternateImage}></img>
         <h3 className="detail__name">{data.name}</h3>
         <h3 className="detail__label">Estatus:</h3>
-        <h3 className="detail__value">{data.alive}</h3>
+        <h3 className="detail__value">
+          {data.alive ? "Vivo ❤" : "Muertaco ☠"}
+        </h3>
         <h3 className="detail__label">Especie:</h3>
         <h3 className="detail__value">{data.species}</h3>
         <h3 className="detail__label">Género:</h3>
         <h3 className="detail__value">{data.gender}</h3>
         <h3 className="detail__label">Casa:</h3>
-        <h3 className="detail__value">{data.house}</h3>
+        <h3 className="detail__value">{data.house || "No tiene"}</h3>
       </div>
       <Link to=".." className="character__detail__btn">
         Volver
