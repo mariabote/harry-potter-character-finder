@@ -8,14 +8,21 @@ function SearchPage() {
   // 1.Variables de Estado
   const [characters, setCharacters] = useState([]);
 
-  const [filterHouse, setFilterHouse] = useState("gryffindor");
-  const [filterCharacter, setFilterCharacter] = useState("");
+  const [filterHouse, setFilterHouse] = useState(
+    localStorage.getItem("filterHouse") || "griffindor"
+  );
+  const [filterCharacter, setFilterCharacter] = useState(
+    localStorage.getItem("filterCharacter") || ""
+  );
 
   const handleFilterHouse = (filterValue) => {
     console.log(`handleFilterHouse ${filterValue}`);
+    localStorage.setItem("filterHouse", filterValue);
     setFilterHouse(filterValue);
   };
   const handleFilterCharacter = (filterValue) => {
+    console.log(`handleFilterCharacter ${filterValue}`);
+    localStorage.setItem("filterCharacter", filterValue);
     setFilterCharacter(filterValue);
   };
 
@@ -40,6 +47,8 @@ function SearchPage() {
       <Filters
         handleFilterHouse={handleFilterHouse}
         handleFilterCharacter={handleFilterCharacter}
+        filterCharacter={filterCharacter}
+        filterHouse={filterHouse}
       ></Filters>
       <CharacterList characters={filteredCharacter}></CharacterList>
     </>

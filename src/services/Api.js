@@ -1,7 +1,7 @@
 const callToApi = (filterHouse = "") => {
   let url = "https://hp-api.onrender.com/api/characters";
 
-  if (filterHouse !== "") {
+  if (filterHouse !== "all") {
     url += `/house/${filterHouse}`;
   }
   console.log(`callToApi ${url}`);
