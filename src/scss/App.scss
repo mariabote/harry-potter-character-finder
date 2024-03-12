@@ -1,6 +1,6 @@
 @import "core/reset";
 @import "core/reset";
-html {
+.page {
   background-color: grey;
 }
 .app {
@@ -92,4 +92,8 @@ header {
     align-items: center;
     margin: 1rem;
   }
+}
+.dark__mode {
+  min-width: 100vh;
+  filter: invert(0.3%);
 }

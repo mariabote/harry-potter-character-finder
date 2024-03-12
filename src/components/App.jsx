@@ -4,6 +4,7 @@ import Header from "./Header";
 import "../scss/App.scss";
 import SearchPage from "./SearchPage";
 import CharacterDetail from "./CharacterDetail";
+import { useState } from "react";
 
 function App() {
   // Con el hook useLocation primero obtengo la ruta actual
@@ -15,9 +16,21 @@ function App() {
   // La información que me interesa está en routeData.params.productId
   const characterId = routeData !== null ? routeData.params.characterId : "";
   console.log(routeData);
+  const [pageClass, setPageClass] = useState("darkmode");
+  const handleClick = (event) => {
+    if (pageClass === "darkmode") {
+      setPageClass("");
+    } else {
+      setPageClass("darkmode");
+    }
+  };
   return (
-    <div>
-      <Header></Header>
+    <div className={"page " + pageClass}>
+      <Header>
+        <div>
+          <button onClick={handleClick}>Lumos</button>
+        </div>
+      </Header>
       <main>
         <Routes>
           <Route path="/" element={<SearchPage />} />
