@@ -16,6 +16,7 @@ function App() {
   // La información que me interesa está en routeData.params.productId
   const characterId = routeData !== null ? routeData.params.characterId : "";
   console.log(routeData);
+
   const [pageClass, setPageClass] = useState("darkmode");
   const handleClick = (event) => {
     if (pageClass === "darkmode") {
@@ -24,14 +25,26 @@ function App() {
       setPageClass("darkmode");
     }
   };
+  const renderDarkModeText = () => {
+    if (pageClass === "darkmode") {
+      return "Tienes activado el dark mode";
+    } else {
+      return null;
+    }
+  };
+
+  const dameUn1 = () => {
+    return "UNO";
+  };
+
+  console.log(dameUn1());
   return (
     <div className={"page " + pageClass}>
-      <Header>
+      <Header></Header>
+      <main>
         <div>
           <button onClick={handleClick}>Lumos</button>
         </div>
-      </Header>
-      <main>
         <Routes>
           <Route path="/" element={<SearchPage />} />
           <Route

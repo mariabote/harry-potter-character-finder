@@ -1,8 +1,17 @@
 @import "core/reset";
-@import "core/reset";
+
 .page {
-  background-color: grey;
+  background-color: white;
+  color: black;
 }
+
+.darkmode {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  // filter: invert(100%);
+}
+
 .app {
   font-family: "Arial", sans-serif;
   text-align: center;
@@ -92,8 +101,4 @@ header {
     align-items: center;
     margin: 1rem;
   }
-}
-.dark__mode {
-  min-width: 100vh;
-  filter: invert(0.3%);
 }
