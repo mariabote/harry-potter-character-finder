@@ -43,7 +43,7 @@ function App() {
       <Header></Header>
       <main>
         <div>
-          <button className="Lumos" onClick={handleClick}>Lumos</button>
+          <button className="lumos" onClick={handleClick}>Lumos</button>
         </div>
         <Routes>
           <Route path="/" element={<SearchPage />} />
