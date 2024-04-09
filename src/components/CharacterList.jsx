@@ -6,7 +6,7 @@ import CharacterCard from "./CharacterCard";
 function CharacterList({ characters }) {
   const htmlList = characters.map((character, idx) => (
     <Link key={idx} to={"/detail/" + character.id}>
-      <li className="character__card">
+      <li  className="character__card">
         <CharacterCard characterData={character} />
       </li>
     </Link>

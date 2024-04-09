@@ -8,5 +8,10 @@ export default defineConfig({
   assetsInclude: ['images/*'],
   build: {
     outDir: 'docs'
-  }
+  },
+  server: {
+    watch: {
+        usePolling: true
+    }
+}
 });
