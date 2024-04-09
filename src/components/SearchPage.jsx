@@ -9,7 +9,7 @@ function SearchPage() {
   const [characters, setCharacters] = useState([]);
 
   const [filterHouse, setFilterHouse] = useState(
-    localStorage.getItem("filterHouse") || "griffindor"
+    localStorage.getItem("filterHouse") || "all"
   );
   const [filterCharacter, setFilterCharacter] = useState(
     localStorage.getItem("filterCharacter") || ""
