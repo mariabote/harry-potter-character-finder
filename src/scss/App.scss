@@ -157,6 +157,14 @@ header {
     justify-content: center;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+    background: none;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.289);
+    border-radius: 10px;
+
+
   }
 
   &__head {
@@ -165,4 +173,9 @@ header {
     align-items: center;
     margin: 1rem;
   }
+}
+
+.character__detail__btn {
+  text-decoration: none;
+  color: white;
 }

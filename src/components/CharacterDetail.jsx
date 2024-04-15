@@ -20,19 +20,19 @@ function CharacterDetail({ id }) {
         <h3 className="detail__name">{data.name}</h3>
       </div>
       <div className="detail__data">
-        <h3 className="detail__label">Estatus:</h3>
+        <h3 className="detail__label">Status:</h3>
         <h3 className="detail__value">
-          {data.alive ? "Vivo ❤" : "Muertaco ☠"}
+          {data.alive ? "Alive ❤" : "Dead ☠"}
         </h3>
-        <h3 className="detail__label">Especie:</h3>
+        <h3 className="detail__label">Species:</h3>
         <h3 className="detail__value">{data.species}</h3>
-        <h3 className="detail__label">Género:</h3>
+        <h3 className="detail__label">Gender:</h3>
         <h3 className="detail__value">{data.gender}</h3>
-        <h3 className="detail__label">Casa:</h3>
-        <h3 className="detail__value">{data.house || "No tiene"}</h3>
+        <h3 className="detail__label">House:</h3>
+        <h3 className="detail__value">{data.house || "No home"}</h3>
       </div>
       <Link to=".." className="character__detail__btn">
-        Volver
+        Return
       </Link>
     </section>
   );
